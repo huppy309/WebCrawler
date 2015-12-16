@@ -1,0 +1,4 @@
+public enum State
+{
+	START, TAGSTART, SCRIPT, COMMENT, ALINK, HREF; 
+}
