@@ -22,7 +22,7 @@ public class UrlExtractor
 		href = new Href();
 	} 
 
-	public static String getDomain(String url)
+	public static String getDomain(String url) throws NullPointerException
 	{
 		String domain = "";
 
@@ -78,6 +78,7 @@ public class UrlExtractor
 
 	public ArrayList<String> extractUrl(String inputUrl)
 	{
+
 		RedirectHandler handler = new RedirectHandler();
 		ArrayList<String> urlList = null;
 		try
@@ -100,16 +101,19 @@ public class UrlExtractor
 			StateTag current = start;
 			
 			String result;
+			IntWrapper count = new IntWrapper(0);
 
 			while((end = reader.read(buffer, 0, bufferSize)) != -1)
 			{
-				IntWrapper count = new IntWrapper(0);
+				count.set(0);
 				while(count.value < 100)
 				{
 					switch(current.state)
 					{
 						case START:
+							
 							result = current.parse(count, buffer);
+
 							if(result.equals("<"))
 								current = tagStart;
 							else if(result.equals("redirect"))
@@ -218,8 +222,11 @@ public class UrlExtractor
 		{
 			return null;
 		}
+		catch(NullPointerException e)
+		{
+			return urlList;
+		}
 		
-
 		return urlList;
 	} 
 }

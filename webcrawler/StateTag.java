@@ -13,6 +13,11 @@ class IntWrapper
 	{
 		value = val;
 	}
+
+	public void set(int _value)
+	{
+		value = _value;
+	}
 }
 
 class Start extends StateTag
@@ -48,6 +53,7 @@ class Start extends StateTag
 
 			if(redirectCounter.value == redirect.length())
 			{
+				redirectCounter.set(0);
 				tag = "redirect";
 				count.value++;
 				return tag;
