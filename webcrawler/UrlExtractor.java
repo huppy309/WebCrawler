@@ -4,12 +4,12 @@ import java.util.*;
 
 public class UrlExtractor
 {
-	private Start start;
-	private TagStart tagStart;
-	private Script script;
-	private Comment comment; 
-	private A a;
-	private Href href ;
+	private StateTag start;
+	private StateTag tagStart;
+	private StateTag script;
+	private StateTag comment; 
+	private StateTag a;
+	private StateTag href ;
 
 
 	public UrlExtractor()
