@@ -1,6 +1,6 @@
 # Multithreaded Web-Crawler
 
-This is a Multi-threaded Web Crawler implemented in Java. It returns a depth-limited tree that illustrates the set of reachable URLs from the given input URL. There are 10 threads that coordinate with each other while processing a single link. The links are appropriately indented in the output to illustrate which "level" or "depth" of the link tree they are in. For example, a URL x with a depth 2 (indicated by a 2 space indentation) will be reachable from the input URL such that input -> someOtherUrl -> x.
+This is a Multi-threaded Web Crawler implemented in Java. It returns a depth-limited tree that illustrates the set of reachable URLs from the given input URL. There are 10 threads that coordinate with each other while processing a single link each. The links are appropriately indented in the output to illustrate which "level" or "depth" of the link tree they are in. For example, a URL x with a depth 2 (indicated by a 2 space indentation) will be reachable from the input URL such that input -> someOtherUrl -> x.
 
 ## Usage
 
